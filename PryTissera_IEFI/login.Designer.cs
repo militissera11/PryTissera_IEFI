@@ -33,12 +33,14 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnIniciar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(50, 85);
+            this.lblUser.Location = new System.Drawing.Point(37, 52);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(37, 13);
             this.lblUser.TabIndex = 0;
@@ -47,7 +49,7 @@
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(50, 130);
+            this.lblPass.Location = new System.Drawing.Point(39, 120);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(35, 13);
             this.lblPass.TabIndex = 1;
@@ -55,42 +57,54 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(126, 82);
+            this.txtUser.Location = new System.Drawing.Point(102, 49);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
             this.txtUser.TabIndex = 2;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(126, 123);
+            this.txtPass.Location = new System.Drawing.Point(102, 113);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 3;
-            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(150, 205);
+            this.btnIniciar.Location = new System.Drawing.Point(128, 160);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(75, 40);
+            this.btnIniciar.Size = new System.Drawing.Size(74, 54);
             this.btnIniciar.TabIndex = 4;
-            this.btnIniciar.Text = "INICIAR";
+            this.btnIniciar.Text = " Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
-            // Form1
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblPass);
+            this.groupBox1.Controls.Add(this.txtPass);
+            this.groupBox1.Controls.Add(this.btnIniciar);
+            this.groupBox1.Controls.Add(this.txtUser);
+            this.groupBox1.Controls.Add(this.lblUser);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(272, 257);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Login";
+            // 
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 478);
-            this.Controls.Add(this.btnIniciar);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.lblPass);
-            this.Controls.Add(this.lblUser);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(656, 451);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "login";
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.login_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -101,6 +115,7 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
