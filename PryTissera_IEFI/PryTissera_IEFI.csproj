@@ -48,11 +48,17 @@
   <ItemGroup>
     <Compile Include="Auditoria.cs" />
     <Compile Include="conexion.cs" />
-    <Compile Include="FormAuditoria.cs">
+    <Compile Include="Auditoria..cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAuditoria.Designer.cs">
-      <DependentUpon>FormAuditoria.cs</DependentUpon>
+    <Compile Include="Auditoria..Designer.cs">
+      <DependentUpon>Auditoria..cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUsuarios..cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionUsuarios..Designer.cs">
+      <DependentUpon>GestionUsuarios..cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -68,8 +74,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAuditoria.resx">
-      <DependentUpon>FormAuditoria.cs</DependentUpon>
+    <Compile Include="RegistroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroUsuarios.Designer.cs">
+      <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SesionActiva.cs" />
+    <EmbeddedResource Include="Auditoria..resx">
+      <DependentUpon>Auditoria..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionUsuarios..resx">
+      <DependentUpon>GestionUsuarios..cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -86,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistroUsuarios.resx">
+      <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

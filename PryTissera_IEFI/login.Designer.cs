@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUser = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -37,67 +37,70 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblUser
+            // lblUsuario
             // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(37, 52);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(37, 13);
-            this.lblUser.TabIndex = 0;
-            this.lblUser.Text = "USER";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(39, 52);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(59, 13);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "USUARIO:";
             // 
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(39, 120);
+            this.lblPass.Location = new System.Drawing.Point(39, 116);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(35, 13);
+            this.lblPass.Size = new System.Drawing.Size(84, 13);
             this.lblPass.TabIndex = 1;
-            this.lblPass.Text = "PASS";
+            this.lblPass.Text = "CONTRASEÑA:";
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(102, 49);
+            this.txtUser.Location = new System.Drawing.Point(129, 45);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
             this.txtUser.TabIndex = 2;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(102, 113);
+            this.txtPass.Location = new System.Drawing.Point(129, 109);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 3;
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(128, 160);
+            this.btnIniciar.Location = new System.Drawing.Point(129, 162);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(74, 54);
+            this.btnIniciar.Size = new System.Drawing.Size(100, 34);
             this.btnIniciar.TabIndex = 4;
-            this.btnIniciar.Text = " Iniciar";
+            this.btnIniciar.Text = "Iniciar Sesion";
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.lblPass);
             this.groupBox1.Controls.Add(this.txtPass);
             this.groupBox1.Controls.Add(this.btnIniciar);
             this.groupBox1.Controls.Add(this.txtUser);
-            this.groupBox1.Controls.Add(this.lblUser);
+            this.groupBox1.Controls.Add(this.lblUsuario);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(272, 257);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Login";
+            this.groupBox1.Text = "Acceso";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 451);
+            this.ClientSize = new System.Drawing.Size(301, 275);
             this.Controls.Add(this.groupBox1);
             this.Name = "login";
             this.Text = "Login";
@@ -110,7 +113,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPass;
