@@ -10,18 +10,18 @@ namespace PryTissera_IEFI
 {
     internal class conexion
     {
-        private string connectionString = "Server=localhost;Database=users;Trusted_Connection=True;";
+        public static string cadena = "Server=localhost;Database=Usuarios;Trusted_Connection=True;";
 
         public SqlConnection ObtenerConexion()
         {
-            return new SqlConnection(connectionString);
+            return new SqlConnection(cadena);
         }
 
         public void ProbarConexion()
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(cadena))
                 {
                     connection.Open();
                     MessageBox.Show("✅ Conexión exitosa a la base de datos", "Conexión", MessageBoxButtons.OK, MessageBoxIcon.Information);
