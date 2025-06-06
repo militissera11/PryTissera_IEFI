@@ -70,9 +70,21 @@ namespace PryTissera_IEFI
         private void btnTengoUsuario_Click(object sender, EventArgs e)
         {
             login loginForm = new login();
+            loginForm.StartPosition = FormStartPosition.Manual;
+            loginForm.Location = this.Location;
             this.Hide();
             loginForm.ShowDialog();
             this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtContraseña.PasswordChar = chkMostrarCon.Checked ? '\0' : '*';
         }
     }
 }

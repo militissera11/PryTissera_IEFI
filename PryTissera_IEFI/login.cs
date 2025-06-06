@@ -97,6 +97,17 @@ namespace PryTissera_IEFI
         {
 
         }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            RegistroUsuarios RegistroUsuariosForm = new RegistroUsuarios();
+            RegistroUsuariosForm.StartPosition = FormStartPosition.Manual;
+            RegistroUsuariosForm.Location = this.Location;
+
+            this.Hide();
+            RegistroUsuariosForm.ShowDialog();
+            this.Close();
+        }
     } 
 
 }

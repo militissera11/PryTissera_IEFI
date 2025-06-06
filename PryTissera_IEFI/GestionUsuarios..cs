@@ -17,6 +17,7 @@ namespace PryTissera_IEFI
         {
             InitializeComponent();
             CargarUsuarios();
+            MostrarDatosPersonales();
         }
         private void CargarUsuarios()
         {
@@ -79,8 +80,8 @@ namespace PryTissera_IEFI
 
         }
 
-         private void btnEliminar_Click(object sender, EventArgs e)
-         {
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
             if (dgvUsuarios.CurrentRow == null)
             {
                 MessageBox.Show("Seleccioná un usuario de la tabla para eliminar.");
@@ -102,7 +103,7 @@ namespace PryTissera_IEFI
                 CargarUsuarios();
             }
 
-         }
+        }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -118,4 +119,44 @@ namespace PryTissera_IEFI
         {
 
         }
-    }   }   
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(conexion.cadena))
+            {
+                con.Open();
+
+                string query = "INSERT INTO DatosPersonales (Usuario, NombreCompleto, FechaNacimiento, Genero, Nacionalidad, Telefono) " +
+                               "VALUES (@usuario, @nombre, @fecha, @genero, @nacionalidad, @telefono)";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text); // debe coincidir con el usuario del tab anterior
+                cmd.Parameters.AddWithValue("@nombre", txtNombreCompleto.Text);
+                cmd.Parameters.AddWithValue("@fecha", Convert.ToDateTime(txtFechaNacimiento.Text));
+                cmd.Parameters.AddWithValue("@genero", txtGenero.Text);
+                cmd.Parameters.AddWithValue("@nacionalidad", txtNacionalidad.Text);
+                cmd.Parameters.AddWithValue("@telefono", txtTelefono.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Datos personales agregados correctamente");
+
+                MostrarDatosPersonales(); // recargar grilla
+            }
+        }
+
+
+        private void MostrarDatosPersonales()
+        {
+            using (SqlConnection con = new SqlConnection(conexion.cadena))
+            {
+                con.Open();
+
+                string query = "SELECT * FROM DatosPersonales";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvPersonales.DataSource = dt;
+            }
+        }
+}   }   
